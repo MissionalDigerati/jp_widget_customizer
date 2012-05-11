@@ -1,7 +1,12 @@
 Joshua Project Customizer for People of the Day Widget
 ======================================================
 
-This tool helps customize the [Joshua Project's](http://www.joshuaproject.net/) People of the Widget.  It pulls in their RSS data, and creates the widget using custom coloring.
+This tool helps customize the [Joshua Project's](http://www.joshuaproject.net/) People of the Widget.  It creates the CSS necessary for the widget based on passed parameters.
+
+Requirements
+------------
+
+* PHP
 
 Development
 -----------
