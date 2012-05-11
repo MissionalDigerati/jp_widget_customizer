@@ -51,8 +51,8 @@ $footer_hover_color = (isset($_GET['fhc'])) ? '#'.$_GET['fhc'] : '#0000FF';
  * @author Johnathan Pulos
  */
 $border = '';
-$has_border = (isset($_GET['nb'])) ? $_GET['nb'] : 'true';
-if($has_border == 'true') {
+$has_border = (isset($_GET['nb'])) ? $_GET['nb'] : 'false';
+if($has_border == 'false') {
 	$border_type = (isset($_GET['bdt'])) ? $_GET['bdt'] : 'dashed';
 	$border_color = (isset($_GET['bdc'])) ? '#'.$_GET['bdc'] : '#CCCCCC';
 	$border_width = (isset($_GET['bdw'])) ? $_GET['bdw'] : '1px';
