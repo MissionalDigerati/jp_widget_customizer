@@ -1,0 +1,56 @@
+body{
+	font-family: 'Ariel';
+}
+#container{
+	width: 800px;
+	margin: auto;
+	background-color: green;
+}
+#selectors{
+	width: 356px;
+	height: 600px;
+}
+#result{
+	width: 400px;
+	padding-left: 10px;
+}
+.swatch{
+	width: 18px;
+	height: 18px;
+	
+}
+.input_container{
+	width: 20px;
+}
+
+.clear{
+	display: block;
+	clear: both;
+	height: 1px;
+}
+.left{
+	float: left;
+}
+
+iframe#widget_iframe {
+	height: 500px;
+	width: 250px;
+}
+
+input{
+	font-weight: bold;
+}
+
+textarea{
+	width: 250px;
+	height: 100px;
+}
+#colorSelector{
+	background-color: white;
+}
+#colorpickerHolder2{
+	width: 356px;
+	height: 0;
+	overflow: hidden;
+	position: absolute;
+}
