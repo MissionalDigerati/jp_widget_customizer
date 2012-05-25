@@ -26,7 +26,8 @@ function get_widget() {
 	var iframe = $('<iframe/>').attr({src: url, id: 'widget_iframe', frameborder: '0'});
 	$('#widget').fadeOut('slow', function() {
 		$(this).html('').append(iframe);
-		$(this).fadeIn('slow')
+		$(this).fadeIn('slow');
+		$('#textarea').text("<script src='"+url+"' type='text/javascript' charset='utf-8'></script><noscript><a href='http://www.joshuaproject.net/upgotdfeed.php'>View Unreached People of the Day</a></noscript>");
 	});
 	;
 };
@@ -42,7 +43,7 @@ function initiate_color_picker(){
 				eval(''+key+' = "'+color+'"');
 			 	url = 'widget.php?cfc='+ cfc +'&chc='+ chc +'&clc='+ clc +'&cbg='+ cbg +'&bbg='+ bbg +'&blc='+ blc +'&bhc='+ bhc +'&fbg='+ fbg +'&ffc='+ ffc +'&flc='+ flc +'&fhc='+ fhc +'&bdt='+ bdt +'&bdw='+ bdw +'&bdc='+ bdc +'';
 				get_widget();
-				$('#'+key).css('background-color', hex);
+				$('#'+key).css('background-color', '#'+hex);
 			}	
 		},
 		onBeforeShow: function () {
