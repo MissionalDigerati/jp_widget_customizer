@@ -1,3 +1,4 @@
+//created by Joshua Shuster
 var cfc = 'FFFFFF';//center font color
 var chc = '898989'; //center link hover font color
 var clc = '999999'; //center link font color
@@ -22,15 +23,28 @@ $(document).ready(function() {
 	border_options();
 	reset_all_settings();
 });
+/**
+	This appends the widget to the div with a class with widget, and has it fade in.
+	This function is also called upon when any of the variables are upated, this updates
+	the URL variable, and changes the widget accoding to the users specifications. 
+ */
 function get_widget() {
 	var iframe = $('<iframe/>').attr({src: url, id: 'widget_iframe', frameborder: '0'});
 	$('#widget').fadeOut('slow', function() {
 		$(this).html('').append(iframe);
 		$(this).fadeIn('slow');
+		$('#textarea').click(function(){
+			$(this).select();
+		});
 		$('#textarea').text("<script src='"+url+"' type='text/javascript' charset='utf-8'></script><noscript><a href='http://www.joshuaproject.net/upgotdfeed.php'>View Unreached People of the Day</a></noscript>");
 	});
 	;
 };
+/**
+	This adds the color picker to all of the input forums wiht a class of backgroud-color
+	the color swatches are technically input forums in readonly mode, with an image on top 
+	to signify that you can select colors from it. 
+ */
 function initiate_color_picker(){
 	$('.background_color').ColorPicker({
 		onSubmit: function(hsb, hex, rgb, el) {
@@ -54,6 +68,9 @@ function initiate_color_picker(){
 		$(this).ColorPickerSetColor(this.value);
 	});
 };
+/**
+	This listens for changes in the border opton divs. As they are controlled by drop down menus instead of swatches. 
+ */
 function border_options(){
 	$('#select').click(function(){
 	 	bdt = $('#select').val();
@@ -66,6 +83,10 @@ function border_options(){
 		get_widget();
 	});
 };
+/**
+	When this button is clicked, it changes all of the global variables back to their original state
+	then calls on the get_widget metod, and updates the widget itself. 
+ */
 function reset_all_settings(){
 	$('button.reset').click(function(){
 		cfc = 'FFFFFF';//center font color
@@ -86,6 +107,11 @@ function reset_all_settings(){
 		get_widget();
 	});
 };
+/**
+	This shows and hides the div where you can select border options
+	on clicking no, the variables are updated back to standard config,
+	where there is no border. 
+ */
 function hide_border_options(){
 	$('button#button_yes').click(function(){
 		$('#border_options').slideDown('slow');

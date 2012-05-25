@@ -50,7 +50,7 @@ body{
 	background-color: #FFFFFF;
 }
 #widget_container{
-	height: 484px;
+	height: 375px;
 	overflow: hidden;
 }
 #border_options{
@@ -90,8 +90,8 @@ textarea{
 	position: absolute;
 }
 .background_color{
-	width: 36px;
-	height: 36px;
+	width: 34px;
+	height: 34px;
 	background: url('images/select2.png');
 	outline-width: 0
 }
