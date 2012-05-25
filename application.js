@@ -16,11 +16,11 @@ var url = 'widget.php?cfc='+ cfc +'&chc='+ chc +'&clc='+ clc +'&cbg='+ cbg +'&bb
 var safety_vars = ['bbg','cbg', 'cfc', 'chc', 'clc', 'blc', 'bhc', 'fbg', 'ffc', 'flc', 'fhc', 'bdt', 'bdw', 'bdc'];
 // url = widget.php?cfc=FFFFFF&chc=898989&clc=999999&cbg=454545&bbg=098686&blc=444444&bhc=FFFFFF&fbg=767676&ffc=232323&flc=656565&fhc=898989&bdt=double&bdw=5px&bdc=FFFFFF
 $(document).ready(function() {
+	hide_border_options();
 	get_widget();
 	initiate_color_picker();
 	border_options();
 	reset_all_settings();
-	//custom_color();
 });
 function get_widget() {
 	var iframe = $('<iframe/>').attr({src: url, id: 'widget_iframe', frameborder: '0'});
@@ -30,11 +30,10 @@ function get_widget() {
 	});
 	;
 };
-
 function initiate_color_picker(){
-	$('.color-picker, .header_font, .header_font_hover, .background_color, .center_font_color, .center_link_color, .center_link_hover, .footer_background, .footer_font, .footer_links, .footer_link_hover, #colorSelector').ColorPicker({
+	$('.background_color').ColorPicker({
 		onSubmit: function(hsb, hex, rgb, el) {
-			$(el).val(hex);
+			//$(el).val(hex);
 			$(el).ColorPickerHide();
 			var key = $(el).attr('id');
 			if($.inArray(key, safety_vars) != -1) {
@@ -43,9 +42,8 @@ function initiate_color_picker(){
 				eval(''+key+' = "'+color+'"');
 			 	url = 'widget.php?cfc='+ cfc +'&chc='+ chc +'&clc='+ clc +'&cbg='+ cbg +'&bbg='+ bbg +'&blc='+ blc +'&bhc='+ bhc +'&fbg='+ fbg +'&ffc='+ ffc +'&flc='+ flc +'&fhc='+ fhc +'&bdt='+ bdt +'&bdw='+ bdw +'&bdc='+ bdc +'';
 				get_widget();
-				$('#'+key).css('background', hex);
-			}
-	 		
+				$('#'+key).css('background-color', hex);
+			}	
 		},
 		onBeforeShow: function () {
 			$(this).ColorPickerSetColor(this.value);
@@ -54,17 +52,7 @@ function initiate_color_picker(){
 	.bind('keyup', function(){
 		$(this).ColorPickerSetColor(this.value);
 	});
-	// $('button.header_button').click(function(){
-	// 	bbg = $('input.color-picker').val().toUpperCase();
-	// 	console.log(url);
-	// 	url = 'widget.php?cfc='+ cfc +'&chc='+ chc +'&clc='+ clc +'&cbg='+ cbg +'&bbg='+ bbg +'&blc='+ blc +'&bhc='+ bhc +'&fbg='+ fbg +'&ffc='+ ffc +'&flc='+ flc +'&fhc='+ fhc +'&bdt='+ bdt +'&bdw='+ bdw +'&bdc='+ bdc +'';
-	// 	get_widget();
-	// 	
-	// 	
-	// });
-	
 };
-
 function border_options(){
 	$('#select').click(function(){
 	 	bdt = $('#select').val();
@@ -77,7 +65,6 @@ function border_options(){
 		get_widget();
 	});
 };
-
 function reset_all_settings(){
 	$('button.reset').click(function(){
 		cfc = 'FFFFFF';//center font color
@@ -98,25 +85,21 @@ function reset_all_settings(){
 		get_widget();
 	});
 };
+function hide_border_options(){
+	$('button#button_yes').click(function(){
+		$('#border_options').slideDown('slow');
+			bdw = '1px'; 
+	 		url = 'widget.php?cfc='+ cfc +'&chc='+ chc +'&clc='+ clc +'&cbg='+ cbg +'&bbg='+ bbg +'&blc='+ blc +'&bhc='+ bhc +'&fbg='+ fbg +'&ffc='+ ffc +'&flc='+ flc +'&fhc='+ fhc +'&bdt='+ bdt +'&bdw='+ bdw +'&bdc='+ bdc +'';
+			get_widget();
+	});
+	$('button#button_no').click(function(){
+		$('#border_options').slideUp('slow');
+			bdt = 'double';//The CSS border style.  Options: dotted, dashed, solid, double, groove, ridge, inset, or outset. (default: dashed)
+			bdw = '0px'; //The CSS border width.  You need to include the metric system you want to use. (default: 1px)
+			bdc = 'FFFFFF'; //border color
+			url = 'widget.php?cfc='+ cfc +'&chc='+ chc +'&clc='+ clc +'&cbg='+ cbg +'&bbg='+ bbg +'&blc='+ blc +'&bhc='+ bhc +'&fbg='+ fbg +'&ffc='+ ffc +'&flc='+ flc +'&fhc='+ fhc +'&bdt='+ bdt +'&bdw='+ bdw +'&bdc='+ bdc +'';
+		get_widget();
+	});
+};
 
-// function custom_color(){
-// 	$('#colorSelector').ColorPicker({
-// 		submit: function (colpkr) {
-// 			$(colpkr).fadeIn(500);
-// 			console.log(el);
-// 			return false;
-// 		},
-// 		onHide: function (colpkr) {
-// 			$(colpkr).fadeOut(500);
-// 			return false;
-// 		},
-// 		onChange: function (hsb, hex, rgb, el) {
-// 			$('#colorSelector').css('background-color', '#' + hex);
-// 			console.log(el);
-// 		}
-// 	});
-// 	
-// };
-// 
-// 
 

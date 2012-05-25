@@ -4,7 +4,6 @@ body{
 #container{
 	width: 800px;
 	margin: auto;
-	background-color: green;
 }
 #selectors{
 	width: 356px;
@@ -14,15 +13,49 @@ body{
 	width: 400px;
 	padding-left: 10px;
 }
-.swatch{
-	width: 18px;
-	height: 18px;
-	
+#cbg{
+	background-color: #454545;
 }
-.input_container{
-	width: 20px;
+#bbg{
+	background-color: #098686;
 }
-
+#blc{
+	background-color: #444444;
+}
+#bhc{
+	background-color: #FFFFFF;
+}
+#cfc{
+	background-color: #FFFFFF;
+}
+#clc{
+	background-color: #999999;
+}
+#chc{
+	background-color: #898989;
+}
+#fbg{
+	background-color: #767676;
+}
+#ffc{
+	background-color: #232323;
+}
+#flc{
+	background-color: #FFFFFF;
+}
+#fhc{
+	background-color: #898989;
+}
+#bdc{
+	background-color: #FFFFFF;
+}
+#widget_container{
+	height: 484px;
+	overflow: hidden;
+}
+#border_options{
+	display: none;
+}
 .clear{
 	display: block;
 	clear: both;
@@ -31,16 +64,18 @@ body{
 .left{
 	float: left;
 }
-
 iframe#widget_iframe {
 	height: 500px;
 	width: 250px;
 }
-
 input{
 	font-weight: bold;
+	cursor: pointer;
+	border: none;
+	border-spacing: 0px;
+	-moz-border-radius:7px;
+	-webkit-border-radius: 7px;
 }
-
 textarea{
 	width: 250px;
 	height: 100px;
@@ -53,4 +88,10 @@ textarea{
 	height: 0;
 	overflow: hidden;
 	position: absolute;
+}
+.background_color{
+	width: 36px;
+	height: 36px;
+	background: url('images/select2.png');
+	outline-width: 0
 }

@@ -40,53 +40,39 @@
 		<div id="container">
 			<div id="selectors" class="left">
 				Background Color:<br/>
-				<div id="colorSelector" class="swatch"></div>
-				<div id="colorpickerHolder2"></div>
-				<!-- <input type="text" name="color4" id="cbg" class="background_color" size="17" maxlength="8" value="Choose color here!" onFocus="value=''"></input> -->
+					<input type="text" id="cbg" readonly="readonly" class="background_color" size="17" maxlength="8" />
 				<br/>
 				Header Color:<br/>
-				<input type="text" name="color1" id="bbg" class="color-picker" size="17" maxlength="8" value="Choose color here!" onFocus="value=''"><br/>
+				<input type="text" id="bbg" readonly="readonly" class="background_color" size="17" maxlength="8" />
+				<br/>
 				Header Font Color:<br/>
-				<input type="text" name="color2" id="blc" class="header_font" size="17" maxlength="8" value="Choose color here!" onFocus="value=''"><br/>
+				<input type="text" id="blc" readonly="readonly" class="background_color" size="17" maxlength="8" />
+				<br/>
 				Header Font Hover Color:<br/>
-				<input type="text" name="color3" id="bhc" class="header_font_hover" size="17" maxlength="8" value="Choose color here!" onFocus="value=''"><br/>
+				<input type="text" id="bhc" readonly="readonly" class="background_color" size="17" maxlength="8" />
+				<br/>
 				Center Font Color:<br/>
-				<input type="text" name="color3" id="cfc" class="center_font_color" size="17" maxlength="8" value="Choose color here!" onFocus="value=''"><br/>
+				<input type="text" id="cfc" readonly="readonly" class="background_color" size="17" maxlength="8" />
+				<br/>
 				Center Font Link Color:<br/>
-				<input type="text" name="color3" id="clc" class="center_link_color" size="17" maxlength="8" value="Choose color here!" onFocus="value=''"><br/>
+				<input type="text" id="clc" readonly="readonly" class="background_color" size="17" maxlength="8" />
+				<br/>
 				Center Font Link Hover Color:<br/>
-				<input type="text" name="color3" id="chc" class="center_link_hover" size="17" maxlength="8" value="Choose color here!" onFocus="value=''"><br/>
+				<input type="text" id="chc" readonly="readonly" class="background_color" size="17" maxlength="8" />
+				<br/>
 				Footer Background Color:<br/>
-				<input type="text" name="color3" id="fbg" class="footer_background" size="17" maxlength="8" value="Choose color here!" onFocus="value=''"><br/>
+				<input type="text" id="fbg" readonly="readonly" class="background_color" size="17" maxlength="8" />
+				<br/>
 				Footer Font Color:<br/>
-				<input type="text" name="color3" id="ffc" class="footer_font" size="17" maxlength="8" value="Choose color here!" onFocus="value=''"><br/>
+				<input type="text" id="ffc" readonly="readonly" class="background_color" size="17" maxlength="8" />
+				<br/>
 				Footer Links Color:<br/>
-				<input type="text" name="color3" id="flc" class="footer_links" size="17" maxlength="8" value="Choose color here!" onFocus="value=''"><br/>
+				<input type="text" id="flc" readonly="readonly" class="background_color" size="17" maxlength="8" />
+				<br/>
 				Footer Link Hover Color:<br/>
-				<input type="text" name="color3" id="fhc" class="footer_link_hover" size="17" maxlength="8" value="Choose color here!" onFocus="value=''"><br/>
-				Border Color:<br/>
-				<input type="text" name="color3" id="bdc" class="border_color" size="17" maxlength="8" value="Choose color here!" onFocus="value=''"><br/>
-				Border Style:<br/>
-				<select id="select">
-					<option>double</option>
-					<option>dotted</option> 
-					<option>dashed</option> 
-					<option>solid</option> 
-					<option>groove</option> 
-					<option>ridge</option> 
-					<option>inset</option> 
-					<option>outset</option>
-				</select><br/>
-				
-				Border Width:<br/>
-				<select id="border_width">
-					<option>1px</option>
-					<option>2px</option> 
-					<option>3px</option> 
-					<option>4px</option> 
-					<option>5px</option> 
-					<option>6px</option> 
-				</select><br/>
+				<input type="text" id="fhc" readonly="readonly" class="background_color" size="17" maxlength="8" />
+				<br/>
+					
 				Reset All Settings<br/>
 				<button class="reset">Reset</button><br/>
 				<textarea id="textarea" type="textarea"> </textarea>
@@ -94,10 +80,45 @@
 			</div>
 			
 			<div id="result" class="left">
-			<div id="widget"></div>
-			<!-- alternative for no javascript --><noscript>
-			<a href="http://www.joshuaproject.net/upgotdfeed.php">View Unreached People of the Day</a></noscript>
-			</div>
+				<div id="widget_container">
+					<div id="widget"></div>
+					<!-- alternative for no javascript --><noscript>
+					<a href="http://www.joshuaproject.net/upgotdfeed.php">View Unreached People of the Day</a></noscript>
+				</div>
+					
+					Would you like a border?
+					<br/>
+					<button id="button_yes">Yes</button><button id="button_no">No</button>
+					<div id="border_options">
+						Border Width:<br/>
+						<select id="border_width">
+							<option>1px</option>
+							<option>2px</option> 
+							<option>3px</option> 
+							<option>4px</option> 
+							<option>5px</option> 
+							<option>6px</option> 
+						</select><br/>
+						Border Color:<br/>
+						<input type="text" id="bdc" readonly="readonly" class="background_color" size="17" maxlength="8" />
+						<br/>
+						Border Style:<br/>
+						<select id="select">
+							<option>double</option>
+							<option>dotted</option> 
+							<option>dashed</option> 
+							<option>solid</option> 
+							<option>groove</option> 
+							<option>ridge</option> 
+							<option>inset</option> 
+							<option>outset</option>
+						</select><br/>
+					</div><!-- border_options -->
+					
+					
+					
+					
+				</div>
 			<div class="clear">
 			</div>
 		</div> <!-- container -->
