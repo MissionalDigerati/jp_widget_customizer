@@ -93,5 +93,12 @@ textarea{
 	width: 34px;
 	height: 34px;
 	background: url('../images/select2.png');
-	outline-width: 0
+	outline-width: 0;
+
+}
+.widgets{
+	
+}
+select{
+	margin: 9px;
 }
