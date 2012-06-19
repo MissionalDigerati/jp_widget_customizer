@@ -137,88 +137,6 @@ function hide_border_options(){
 	});
 };
 /**
-	This function listens in on each selector box, and changes then to them selected color.  
- */
-function added_select_boxes(){
-	$('select.cbg').change(function(){
-		getCbgValue();
-		update_Widget();
-	});
- 	function getCbgValue(){
-	  	cbg = $('select.cbg').val();
-	};
-	$('select.bbg').change(function(){
-		getBbgValue();
-		update_Widget();
-	});
- 	function getBbgValue(){
-		bbg = $('select.bbg').val();
-	};
-	$('select.blc').change(function(){
-		getBlcValue();
-		update_Widget();
-	});
- 	function getBlcValue(){
-		blc = $('select.blc').val();
-	};
-	$('select.bhc').change(function(){
-		getBhcValue();
-		update_Widget();
-	});
- 	function getBhcValue(){
-		bhc = $('select.bhc').val();
-	};
-	$('select.cfc').change(function(){
-		getCfcValue();
-		update_Widget();
-	});
- 	function getCfcValue(){
-		cfc = $('select.cfc').val();
-	};
-	$('select.clc').change(function(){
-		getClcValue();
-		update_Widget();
-	});
- 	function getClcValue(){
-		clc = $('select.clc').val();
-	};
-	$('select.chc').change(function(){
-		getChcValue();
-		update_Widget();
-	});
- 	function getChcValue(){
-		chc = $('select.chc').val();
-	};
-	$('select.fbg').change(function(){
-		getFbgValue();
-		update_Widget();
-	});
- 	function getFbgValue(){
-		fbg = $('select.fbg').val();
-	};
-	$('select.ffc').change(function(){
-		getFfcValue();
-		update_Widget();
-	});
- 	function getFfcValue(){
-		ffc = $('select.ffc').val();
-	};
-	$('select.flc').change(function(){
-		getFlcValue();
-		update_Widget();
-	});
- 	function getFlcValue(){
-		flc = $('select.flc').val();
-	};
-	$('select.fhc').change(function(){
-		getFhcValue();
-		update_Widget();
-	});
- 	function getFhcValue(){
-		fhc = $('select.fhc').val();
-	};
-};
-/**
 	On dom ready, this function hides the color picking swatches,
 	and listens for the appropriate buttons are clicked, the
 	advanced color swatches fade in, and fade out accordingly.  
@@ -232,29 +150,15 @@ function settings_options(){
 		$('.background_color').fadeOut('slow');
 	});
 };
+function added_select_boxes(){
+	$('select').change(function(){
+	 	key = $(this).attr('rel');
+		selectColor = $(this).val();
+		eval(''+key+' = "'+selectColor+'"');
+		url = 'widget.php?cfc='+ cfc +'&chc='+ chc +'&clc='+ clc +'&cbg='+ cbg +'&bbg='+ bbg +'&blc='+ blc +'&bhc='+ bhc +'&fbg='+ fbg +'&ffc='+ ffc +'&flc='+ flc +'&fhc='+ fhc +'&bdt='+ bdt +'&bdw='+ bdw +'&bdc='+ bdc +'';
+		get_widget();
+	});
 
-
-
-// function added_select_boxes(){
-// 	
-// 	$('select').change(function(){
-// 		getSelectValue();
-// 	 	key = $(this).attr('class');
-// 		console.log(key);
-// 		console.log(selectColor);
-// 		eval(''+key+' = "'+selectColor+'"');
-// 		url = 'widget.php?cfc='+ cfc +'&chc='+ chc +'&clc='+ clc +'&cbg='+ cbg +'&bbg='+ bbg +'&blc='+ blc +'&bhc='+ bhc +'&fbg='+ fbg +'&ffc='+ ffc +'&flc='+ flc +'&fhc='+ fhc +'&bdt='+ bdt +'&bdw='+ bdw +'&bdc='+ bdc +'';
-// 		get_widget();
-// 	});
-// 	
-// 	
-//  	function getSelectValue(){
-// 	  	cbg = $('select.cbg').val();
-// 		bbg = $('select.bbg').val();
-// 		
-// 		//console.log(selectColor);	
-// 	};
-// 	
-// };
+};
 
 
