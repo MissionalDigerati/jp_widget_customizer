@@ -1,15 +1,15 @@
 //created by Joshua Shuster
-var cfc = 'FFFFFF';//center font color
-var chc = '898989'; //center link hover font color
-var clc = '999999'; //center link font color
-var cbg = '454545'; //The hexadecimal center background color
-var bbg = '098686'; //banner background color. (default: BBDDFF)
-var blc = '444444'; //The hexadecimal banner link font color. (default: 0000FF)
+var cfc = '000000';//center font color
+var chc = '0000ff'; //center link hover font color
+var clc = '000000'; //center link font color
+var cbg = 'eeeeee'; //The hexadecimal center background color
+var bbg = '2870C0'; //banner background color. (default: BBDDFF)
+var blc = 'FFFFFF'; //The hexadecimal banner link font color. (default: 0000FF)
 var bhc = 'FFFFFF'; //banner highlight color
-var fbg = '767676'; // footer background color. (default: BBDDFF)
-var ffc = '232323'; // footer font color
+var fbg = '2870C0'; // footer background color. (default: BBDDFF)
+var ffc = 'FFFFFF'; // footer font color
 var flc = 'FFFFFF'; // footer link font color. (default: 0000FF)
-var fhc = '898989'; // footer link hover font color. (default: 0000FF)
+var fhc = 'FFFFFF'; // footer link hover font color. (default: 0000FF)
 var bdt = 'double';//The CSS border style.  Options: dotted, dashed, solid, double, groove, ridge, inset, or outset. (default: dashed)
 var bdw = '0px'; //The CSS border width.  You need to include the metric system you want to use. (default: 1px)
 var bdc = 'FFFFFF'; //border color
@@ -145,11 +145,11 @@ function settings_options(){
 	$('.background_color').hide();
 	$('.advanced_on').toggle(function(){
 		$('.background_color').fadeIn('slow', function(){
-			$('button.advanced_on').text('Advanced color options: Off');
+			$('button.advanced_on').text('Advanced color options: On');
 		});
 	}, function(){
 		$('.background_color').fadeOut('slow', function(){
-			$('button.advanced_on').text('Advanced color options: On')
+			$('button.advanced_on').text('Advanced color options: Off')
 		});
 	});
 };
