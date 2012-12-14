@@ -1,4 +1,5 @@
 //created by Joshua Shuster
+//https://github.com/naysayer
 var cfc = '000000';//center font color
 var chc = '0000ff'; //center link hover font color
 var clc = '000000'; //center link font color
@@ -169,3 +170,4 @@ function added_select_boxes(){
 		get_widget();
 	});
 };
+
