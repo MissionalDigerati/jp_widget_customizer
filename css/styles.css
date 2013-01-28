@@ -1,16 +1,17 @@
 body{
-	font-family: 'Ariel';
+	font-family: 'Arial';
+	font-size: 14px;
 }
 #container{
-	width: 800px;
+	width: 740px;
 	margin: auto;
 }
 #selectors{
-	width: 356px;
+	width: 320px;
 	height: 600px;
 }
 #result{
-	width: 400px;
+	width: 390px;
 	padding-left: 10px;
 }
 #cbg{
@@ -52,6 +53,7 @@ body{
 #widget_container{
 	height: 375px;
 	overflow: hidden;
+	text-align:center;
 }
 #border_options{
 	display: none;
@@ -65,7 +67,7 @@ body{
 	float: left;
 }
 iframe#widget_iframe {
-	height: 500px;
+	height: 400px;
 	width: 250px;
 }
 input{
@@ -77,8 +79,8 @@ input{
 	-webkit-border-radius: 7px;
 }
 textarea{
-	width: 250px;
-	height: 100px;
+	width: 350px;
+	height: 150px;
 }
 #colorSelector{
 	background-color: white;

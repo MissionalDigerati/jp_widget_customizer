@@ -14,7 +14,7 @@ var fhc = 'FFFFFF'; // footer link hover font color. (default: 0000FF)
 var bdt = 'double';//The CSS border style.  Options: dotted, dashed, solid, double, groove, ridge, inset, or outset. (default: dashed)
 var bdw = '0px'; //The CSS border width.  You need to include the metric system you want to use. (default: 1px)
 var bdc = 'FFFFFF'; //border color
-var url = 'widget.php?cfc='+ cfc +'&chc='+ chc +'&clc='+ clc +'&cbg='+ cbg +'&bbg='+ bbg +'&blc='+ blc +'&bhc='+ bhc +'&fbg='+ fbg +'&ffc='+ ffc +'&flc='+ flc +'&fhc='+ fhc +'&bdt='+ bdt +'&bdw='+ bdw +'&bdc='+ bdc +'';
+var url = 'http://www.joshuaproject.net/upgotd/widget/widget.php?cfc='+ cfc +'&chc='+ chc +'&clc='+ clc +'&cbg='+ cbg +'&bbg='+ bbg +'&blc='+ blc +'&bhc='+ bhc +'&fbg='+ fbg +'&ffc='+ ffc +'&flc='+ flc +'&fhc='+ fhc +'&bdt='+ bdt +'&bdw='+ bdw +'&bdc='+ bdc +'';
 var safety_vars = ['bbg','cbg', 'cfc', 'chc', 'clc', 'blc', 'bhc', 'fbg', 'ffc', 'flc', 'fhc', 'bdt', 'bdw', 'bdc'];
 var key = '';
 var selectColor = '';
@@ -50,7 +50,7 @@ function get_widget() {
 	then the get_widget function after each and ever color changing function. 
  */
 function update_Widget(){
-	url = 'widget.php?cfc='+ cfc +'&chc='+ chc +'&clc='+ clc +'&cbg='+ cbg +'&bbg='+ bbg +'&blc='+ blc +'&bhc='+ bhc +'&fbg='+ fbg +'&ffc='+ ffc +'&flc='+ flc +'&fhc='+ fhc +'&bdt='+ bdt +'&bdw='+ bdw +'&bdc='+ bdc +'';
+	url = 'http://www.joshuaproject.net/upgotd/widget/widget.php?cfc='+ cfc +'&chc='+ chc +'&clc='+ clc +'&cbg='+ cbg +'&bbg='+ bbg +'&blc='+ blc +'&bhc='+ bhc +'&fbg='+ fbg +'&ffc='+ ffc +'&flc='+ flc +'&fhc='+ fhc +'&bdt='+ bdt +'&bdw='+ bdw +'&bdc='+ bdc +'';
 	get_widget();
 };
 /**
@@ -68,7 +68,7 @@ function initiate_color_picker(){
 				var color = hex.toUpperCase();
 				//bbg = "445566";
 				eval(''+key+' = "'+color+'"');
-			 	url = 'widget.php?cfc='+ cfc +'&chc='+ chc +'&clc='+ clc +'&cbg='+ cbg +'&bbg='+ bbg +'&blc='+ blc +'&bhc='+ bhc +'&fbg='+ fbg +'&ffc='+ ffc +'&flc='+ flc +'&fhc='+ fhc +'&bdt='+ bdt +'&bdw='+ bdw +'&bdc='+ bdc +'';
+			 	url = 'http://www.joshuaproject.net/upgotd/widget/widget.php?cfc='+ cfc +'&chc='+ chc +'&clc='+ clc +'&cbg='+ cbg +'&bbg='+ bbg +'&blc='+ blc +'&bhc='+ bhc +'&fbg='+ fbg +'&ffc='+ ffc +'&flc='+ flc +'&fhc='+ fhc +'&bdt='+ bdt +'&bdw='+ bdw +'&bdc='+ bdc +'';
 				get_widget();
 				$('#'+key).css('background-color', '#'+hex);
 			}	
@@ -100,20 +100,21 @@ function border_options(){
  */
 function reset_all_settings(){
 	$('button.reset').click(function(){
-		cfc = 'FFFFFF';//center font color
-		chc = '898989'; //center link hover font color
-		clc = '999999'; //center link font color
-		cbg = '454545'; //The hexadecimal center background color
-		bbg = '098686'; //banner background color. (default: BBDDFF)
-		blc = '444444'; //The hexadecimal banner link font color. (default: 0000FF)
+		cfc = '000000';//center font color
+		chc = '0000FF'; //center link hover font color
+		clc = '000000'; //center link font color
+		cbg = 'EEE'; //The hexadecimal center background color
+		bbg = '2870C0'; //banner background color. (default: BBDDFF)
+		blc = 'FFF'; //The hexadecimal banner link font color. (default: 0000FF)
 		bhc = 'FFFFFF'; //banner highlight color
-		fbg = '767676'; // footer background color. (default: BBDDFF)
-		ffc = '232323'; // footer font color
-	 	flc = 'FFFFFF'; // footer link font color. (default: 0000FF)
-        fhc = '898989'; // footer link hover font color. (default: 0000FF)
-        bdt = 'double';//The CSS border style.  Options: dotted, dashed, solid, double, groove, ridge, inset, or outset. (default: dashed)
-        bdw = '0px'; //The CSS border width.  You need to include the metric system you want to use. (default: 1px)
-        bdc = 'FFFFFF'; //border color
+		fbg = '2870C0'; // footer background color. (default: BBDDFF)
+		ffc = 'FFF'; // footer font color
+		flc = 'FFF'; // footer link font color. (default: 0000FF)
+		fhc = ''; // footer link hover font color. (default: 0000FF)
+		bdt = 'double';//The CSS border style.  Options: dotted, dashed, solid, double, groove, ridge, inset, or outset. (default: dashed)
+		bdw = '0px'; //The CSS border width.  You need to include the metric system you want to use. (default: 1px)
+		bdc = 'FFFFFF'; //border colorz
+		$('select').val(0);
         update_Widget();
 	});
 };
@@ -126,7 +127,7 @@ function hide_border_options(){
 	$('button#button_yes').click(function(){
 		$('#border_options').slideDown('slow');
 			bdw = '1px'; 
-	 		url = 'widget.php?cfc='+ cfc +'&chc='+ chc +'&clc='+ clc +'&cbg='+ cbg +'&bbg='+ bbg +'&blc='+ blc +'&bhc='+ bhc +'&fbg='+ fbg +'&ffc='+ ffc +'&flc='+ flc +'&fhc='+ fhc +'&bdt='+ bdt +'&bdw='+ bdw +'&bdc='+ bdc +'';
+	 		url = 'http://www.joshuaproject.net/upgotd/widget/widget.php?cfc='+ cfc +'&chc='+ chc +'&clc='+ clc +'&cbg='+ cbg +'&bbg='+ bbg +'&blc='+ blc +'&bhc='+ bhc +'&fbg='+ fbg +'&ffc='+ ffc +'&flc='+ flc +'&fhc='+ fhc +'&bdt='+ bdt +'&bdw='+ bdw +'&bdc='+ bdc +'';
 			get_widget();
 	});
 	$('button#button_no').click(function(){
@@ -146,11 +147,11 @@ function settings_options(){
 	$('.background_color').hide();
 	$('.advanced_on').toggle(function(){
 		$('.background_color').fadeIn('slow', function(){
-			$('button.advanced_on').text('Advanced color options: On');
+			$('button.advanced_on').text('On');
 		});
 	}, function(){
 		$('.background_color').fadeOut('slow', function(){
-			$('button.advanced_on').text('Advanced color options: Off')
+			$('button.advanced_on').text('Off')
 		});
 	});
 };
@@ -166,7 +167,7 @@ function added_select_boxes(){
 		selectColor = $(this).val();
 		$('#' + key).css('background-color', '#' + selectColor);
 		eval(''+key+' = "'+selectColor+'"');
-		url = 'widget.php?cfc='+ cfc +'&chc='+ chc +'&clc='+ clc +'&cbg='+ cbg +'&bbg='+ bbg +'&blc='+ blc +'&bhc='+ bhc +'&fbg='+ fbg +'&ffc='+ ffc +'&flc='+ flc +'&fhc='+ fhc +'&bdt='+ bdt +'&bdw='+ bdw +'&bdc='+ bdc +'';
+		url = 'http://www.joshuaproject.net/upgotd/widget/widget.php?cfc='+ cfc +'&chc='+ chc +'&clc='+ clc +'&cbg='+ cbg +'&bbg='+ bbg +'&blc='+ blc +'&bhc='+ bhc +'&fbg='+ fbg +'&ffc='+ ffc +'&flc='+ flc +'&fhc='+ fhc +'&bdt='+ bdt +'&bdw='+ bdw +'&bdc='+ bdc +'';
 		get_widget();
 	});
 };
