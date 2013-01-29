@@ -41,7 +41,8 @@ function get_widget() {
 		$('#textarea').click(function(){
 			$(this).select();
 		});
-		$('#textarea').text("<script src='"+url+"' type='text/javascript' charset='utf-8'></script><noscript><a href='http://www.joshuaproject.net/upgotdfeed.php'>View Unreached People of the Day</a></noscript>");
+		var scriptUrl = url.replace("/widget.php", "/upgotd_customizer.php");
+		$('#textarea').text("<script src='"+scriptUrl+"' type='text/javascript' charset='utf-8'></script><noscript><a href='http://www.joshuaproject.net/upgotdfeed.php'>View Unreached People of the Day</a></noscript>");
 	});
 	;
 };
